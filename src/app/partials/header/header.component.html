@@ -1,6 +1,6 @@
 <div class="header-content limited-container py-4 md:py-6 flex justify-between items-center">
     <div class="navigation flex gap-16 justify-start items-center">
-        <div class="logo">
+        <div class="logo cursor-pointer" [routerLink]="['/']">
             <svg class="hidden md:block" width="242" height="34" viewBox="0 0 242 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_69_160)">
                 <path d="M33.6793 0.313202H0V33.9925H33.6793V0.313202Z" fill="#00376D"/>
@@ -43,30 +43,50 @@
                 <path d="M28.4161 6.28189V12.1512H19.611V23.9668H13.7417V6.28189H28.4161Z" fill="#DCF906"/>
             </svg>
         </div>
-        <nav class="">
+        <nav class="hidden xl:block">
             <ul class="flex gap-8 justify-start items-center">
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Página Inicial</a>
+                    <a [routerLink]="['/']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Página Inicial
+                    </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Sobre nós</a>
+                    <a [routerLink]="['/about-us']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Sobre nós
+                    </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Serviços</a>
+                    <a [routerLink]="['/services']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Serviços
+                    </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Projectos</a>
+                    <a [routerLink]="['/projects']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Projectos
+                    </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Notícias</a>
+                    <a [routerLink]="['/news']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Notícias
+                    </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">Contactos</a>
+                    <a [routerLink]="['/contact-us']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
+                        Contactos
+                    </a>
                 </li>
             </ul>
         </nav>
     </div>
-    <div class="call-to-action">
+    <div class="menu-invoker h-12 xl:hidden">
+        <button class="">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="48" height="48" fill="white"/>
+                <path d="M35 24.3333H13M35 17H13M35 31.6667H13" stroke="#121212" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+    <div class="call-to-action hidden xl:block">
         <button class="bg-(color:--primary) !font-['SpaceGrotesk'] font-bold text-(color:--secondary) py-4 px-6 cursor-pointer flex gap-3 leading-[150%] justify-between items-center">
             Conheça nossos serviços
             <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

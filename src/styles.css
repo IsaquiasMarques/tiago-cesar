@@ -78,6 +78,8 @@
 }
 
 :root{
+    --primary: #00376D;
+    --secondary: #DCF906;
     --max-w: 90%;
     --max-w-1536: 1536px;
 }
@@ -109,7 +111,7 @@
 /* 4xl */
 @media screen and (min-width: 1600px) {
     .limited-container{
-        max-width: 75%;
+        max-width: 85%;
     }
 }
 /* 5xl */

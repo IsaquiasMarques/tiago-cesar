@@ -1,6 +1,6 @@
-<footer class="footer-extended bg-(color:--primary) py-20 px-0">
+<footer class="footer-extended bg-(color:--primary) py-10 xl:py-20 px-0">
     <div class="footer-content limited-container">
-        <div class="top-content flex flex-col xl:flex-row xl:justify-start xl:gap-28">
+        <div class="top-content flex flex-col xl:flex-row xl:justify-start gap-10 xl:gap-28">
             <div class="content-area w-full max-w-[330px]">
                 <div class="main-content">
                     <div class="logo">
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div class="other-links-with-contacts flex justify-start gap-28 items-stretch">
+            <div class="other-links-with-contacts flex justify-between xl:justify-start xl:gap-28 xl:items-stretch">
                 <div class="other-links">
                     <div class="title mb-3 p-1">
                         <h1 class="text-white text-base font-bold">
@@ -106,27 +106,27 @@
                     <div class="list">
                         <ul class="flex flex-col gap-1">
                             <li>
-                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['']">
+                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['/about-us']">
                                     Sobre nós
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['']">
+                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['/services']">
                                     Serviços
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['']">
+                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['/projects']">
                                     Projectos
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['']">
+                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['/news']">
                                     Notícias
                                 </a>
                             </li>
                             <li>
-                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['']">
+                                <a class="text-white !font-[SpaceGrotesk] p-1" [routerLink]="['/contact-us']">
                                     Contactos
                                 </a>
                             </li>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="location-contact">
-                    <div class="top-con xl:flex xl:justify-between xl:gap-16 xl:items-start">
+                    <div class="top-contacts max-w-[200px] xl:max-w-[500px] xl:flex xl:justify-between xl:gap-16 xl:items-start">
                         <div class="location w-full">
                             <div class="title mb-3 p-1">
                                 <h1 class="text-white text-base !font-[SpaceGrotesk] font-bold">
@@ -185,7 +185,7 @@
                     Termos de Serviços
                 </a>
             </div>
-            <p class="text-white text-center text-sm md:text-left !font-[SpaceGrotesk]">
+            <p class="text-white text-left xl:text-center text-sm md:text-left !font-[SpaceGrotesk]">
                 &copy; 2025 Tiago César. Todos os direitos reservados.
             </p>
         </div>

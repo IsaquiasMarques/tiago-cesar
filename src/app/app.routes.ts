@@ -3,12 +3,12 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: '',
-        loadComponent: () => import('./pages/home/components/containers/home.component').then(component => component.HomeComponent),
+        loadComponent: () => import('./pages/home/components/container/home.component').then(component => component.HomeComponent),
         title: 'Tiago César - Página Inicial',
     },
     {
         path: 'about-us',
-        loadComponent: () => import('./pages/about-us/about-us.component').then(component => component.AboutUsComponent),
+        loadComponent: () => import('./pages/about-us/components/container/about-us.component').then(component => component.AboutUsComponent),
         title: 'Saiba mais sobre nós'
     },
     {
@@ -16,7 +16,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadComponent: () => import('./pages/services/services.component').then(component => component.ServicesComponent),
+                loadComponent: () => import('./pages/services/components/container/services.component').then(component => component.ServicesComponent),
                 title: 'Os nossos serviços'
             },
             {
@@ -31,7 +31,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadComponent: () => import('./pages/services/services.component').then(component => component.ServicesComponent),
+                loadComponent: () => import('./pages/projects/components/container/projects.component').then(component => component.ProjectsComponent),
                 title: 'Os nossos projectos'
             },
             {
@@ -46,7 +46,7 @@ export const routes: Routes = [
         children: [
             {
                 path: '',
-                loadComponent: () => import('./pages/news/news.component').then(component => component.NewsComponent),
+                loadComponent: () => import('./pages/news/components/container/news.component').then(component => component.NewsComponent),
                 title: 'Acompanhe as nossas notícias'
             },
             {

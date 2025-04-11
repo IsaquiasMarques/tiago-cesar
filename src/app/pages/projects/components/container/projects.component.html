@@ -1,0 +1,79 @@
+<div class="section-container py-10 xl:py-28">
+    <div class="limited-container flex flex-col gap-y-10 xl:gap-y-20">
+        <div class="section-header flex flex-col gap-6 xl:flex-row justify-between items-start">
+            <div class="title max-w-[671px]">
+                <h1 class=" !font-['SpaceGrotesk'] text-(color:--primary) font-bold text-4xl text-center xl:text-left xl:text-5xl leading-[120%]">
+                    Garantimos qualidade e satisfação para todos nossos clientes
+                </h1>
+            </div>
+            <div class="description max-w-[511px]">
+                <p class=" !font-['SpaceGrotesk'] text-center xl:text-left text-(color:--primary)">
+                    Atuamos como subempreiteiros em projetos de hidráulica, alvenaria, armaduras, cofragem, pinturas e eletricidade, garantindo qualidade e eficiência na execução.
+                </p>
+            </div>
+        </div>
+
+        <div class="projects flex gap-4 flex-col xl:flex-row justify-start items-stretch">
+
+            @for (project of projects; track $index) {
+                <div data-aos="fade-up" class="box-card duration-[.6s] relative w-full xl:w-[60px] h-[440px] xl:h-[720px] overflow-hidden flex items-center"
+                [ngClass]="{
+                    ' xl:w-[1008px]' : $index == active(),
+                }"
+                >
+                    <a [routerLink]="" class="w-full h-full">
+                      <div class="cover-img relative w-full h-full">
+                        <!-- <div class="placeholder"></div> -->
+                        <img [src]="project.imagePath" fill class="w-full h-full object-cover" alt="">
+                      </div>
+                      <div class="overlay z-[2] absolute top-0 left-0 w-full h-full"></div>
+                      <div class="box-content z-[3] absolute p-8 top-0 left-0 w-full h-full flex flex-col justify-between">
+                        <div class="top-content h-full p-6">
+                          <!-- <div class="number bg-[#121212] bg-opacity-[10%] w-[23px] h-[23px] flex justify-center items-center rounded-[50%]">
+                            <p class="text-[12px] font-semibold text-white">{{ order }}</p>
+                          </div> -->
+                        </div>
+                        <div class="middle absolute top-[50%] left-[50%] hidden xl:block -translate-[50%]"
+                        [ngClass]="{
+                            'xl:hidden': $index == active()
+                        }"
+                        >
+                            <button class="cursor-pointer" (click)="open($index)">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="20" fill="#FEFEFF"/>
+                                    <path d="M27 19H21V13H19V19H13V21H19V27H21V21H27V19Z" fill="#00376D"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="bottom-content h-full flex flex-col gap-6 xl:flex-row justify-between xl:items-end xl:max-h-[120px]"
+                        [ngClass]="{
+                            'xl:!hidden': $index !== active()
+                        }"
+                        >
+                            <div class="content max-w-[400px] w-full flex flex-col">
+                                <span class="!font-['SpaceGrotesk'] text-white/70 leading-[150%] text-lg">{{ formatIndex($index + 1) }}</span>
+                                <div class="bottom-card-title mb-2">
+                                  <h1 class="text-2xl text-white leading-8 !font-['SpaceGrotesk'] font-bold" [innerHTML]="project.name"></h1>
+                                </div>
+                                <div class="bottom-card-description pt-2">
+                                  <p class="text-sm xl:text-base font-medium line-clamp-4 !font-['SpaceGrotesk'] leading-[18px] text-white/90" [innerHTML]="project.description"></p>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <button class="text-(color:--primary) !font-['SpaceGrotesk'] font-bold bg-white py-4 px-6 cursor-pointer flex gap-3 leading-[150%] justify-between items-center">
+                                    Visualizar projecto
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.70697 16.9496L15.414 11.2426L9.70697 5.53564L8.29297 6.94964L12.586 11.2426L8.29297 15.5356L9.70697 16.9496Z" fill="#00376D"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                      </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="posts-module-container flex flex-col items-center justify-center w-[93%] desktop:w-[90%] desktop-1440:w-[80%] max-w-[1230px] mx-auto">
+    <div data-aos="fade-up" class="hero-section border-b-2 border-[#EEEEEE] desktop:pb-32 pb-20 mb-10 ">
+        <div class="posts-hero-section">
+            <posts-hero
+            [categories]="this.categories"
+            (changeSelectedCategoryEvent)="this.changeSelectedCategory($event)"
+            (searchingTermEventListener)="this.searchingEventListener($event)"
+            ></posts-hero>
+        </div>
+    </div>
+    <div data-aos="fade-up" class="posts-hero-section w-full">
+        <div class="w-full flex flex-col desktop:flex-row desktop:items-center desktop:justify-between">
+            <h4 class="text-[#121212] desktop:text-[24px] text-[18px] font-semibold mb-2 desktop:mb-0">
+                {{ selectedTag }}
+            </h4>
+            <select
+            (change)="changeSelectedCategory($event)"
+            class="text-[#A4A4A4] focus:outline-none desktop:placeholder:text-[14px] text-[12px] desktop:text-[14px] w-[220px] desktop:w-auto"
+            id=""
+            >
+                <option *ngFor="let category of this.categories" default value="{{ category.slug }}">
+                    {{ category.name }}
+                </option>
+            </select>
+        </div>   
+    </div>
+
+    <div class="w-full">
+        <div class="posts-section-component w-full">
+            <div class="w-full component">
+                <!--News Area-->
+                <div class="w-full my-8 items-center justify-center">
+                    <div class="w-full gap-y-12 gap-x-3 tablet:gap-x-5 desktop-1536:gap-x-[3.29rem] mb-20 flex flex-wrap justify-stretch">
+                        @for (post of this.remainingPosts; track $index) {
+                            <div data-aos="fade-up" class=" w-full desktop:w-auto mb-10">
+                                <!-- <app-post-card-template
+                                [imagePath]="post.imagePath"
+                                [title]="post.title"
+                                [slug]="post.slug"
+                                [excerpt]="post.excerpt"
+                                [posted_at]="post.posted_at"
+                                [timeToRead]="post.timeToRead"
+                                /> -->
+                            </div>     
+                        }
+                    </div>
+                    <div *ngIf="this.postsRowWithAd.length == 0 && this.remainingPostsToDisplay.length == 0" class="w-full flex items-center justify-center">
+                        <h1 class="text-[#808080] font-normal text-[24px]">Notícia não encontrada...</h1>
+                    </div> 
+                    <!-- <div class="w-full flex justify-center gap-1 mt-40"> 
+                        <a routerLink="/home" href="javascript:void(0)" class="text-sm text-[#808080] text-[14px] font-semibold flex gap-2 desktop:gap-3 justify-center items-center">
+                            <div class="spinner-container">
+                                <div class="ispinner">
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                    <div class="ispinner-blade"></div>
+                                  </div>
+                            </div>
+                            <svg id="load-spinner" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="11" width="2" height="6" rx="1" fill="#D9D9D9"/>
+                                <rect x="11" y="18" width="2" height="6" rx="1" fill="#D9D9D9"/>
+                                <rect y="13" width="2" height="6" rx="1" transform="rotate(-90 0 13)" fill="#2D2D2D"/>
+                                <rect x="18" y="13" width="2" height="6" rx="1" transform="rotate(-90 18 13)" fill="#D9D9D9"/>
+                                <rect x="2.80762" y="4.2207" width="2" height="6" rx="1" transform="rotate(-45 2.80762 4.2207)" fill="#D9D9D9"/>
+                                <rect x="15.5356" y="16.9492" width="2" height="6" rx="1" transform="rotate(-45 15.5356 16.9492)" fill="#D9D9D9"/>
+                                <rect x="4.22168" y="21.1914" width="2" height="6" rx="1" transform="rotate(-135 4.22168 21.1914)" fill="#D9D9D9"/>
+                                <rect x="16.9497" y="8.46484" width="2" height="6" rx="1" transform="rotate(-135 16.9497 8.46484)" fill="#D9D9D9"/>
+                            </svg>
+                            Carregando notícias
+                        </a>            
+                    </div>  -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

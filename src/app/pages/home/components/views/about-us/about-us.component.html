@@ -1,0 +1,97 @@
+<div class="section-content relative py-10 xl:py-28">
+    <div class="limited-container flex flex-col gap-y-10 xl:flex-row xl:gap-5 justify-start items-start">
+        <div class="main-title xl:sticky xl:top-[115px] w-full flex flex-col gap-6">
+            <h1 class="text-3xl xl:text-5xl !font-['SpaceGrotesk'] text-(color:--primary) font-bold w-[80%]">
+                Sobre nós
+            </h1>
+            <p class="!font-['SpaceGrotesk'] text-[#636363] text-base font-medium leading-[150%] max-w-[483px]">
+                Uma empresa angolana do ramo da prestação de serviço da construção civil que conta com a experiencia de colaboradores que servem o mercado à mais de 3 decadas no sector
+            </p>
+        </div>
+        <div class="about-tabs w-full relative">
+            <div class="tab-line-slider absolute bg-[#F1F1F1] top-0 left-0 w-full h-[4px]">
+                <span class="slider-active-span h-full w-[90px] absolute top-0 bg-(color:--primary)" [style.left.px]="(this.sliderPosition() )"></span>
+            </div>
+            <div class="tab-title-section py-7 flex gap-10 xl:gap-16">
+                <div class="tab-title mission-tab">
+                    <a href="javascript:void()" class=""
+                    [ngClass]="{'active': this.isMissionActive() }"
+                    (click)="this.tabToView('mission')"
+                    >
+                        <h4 class="font-semibold text-[16px]">01. Missão</h4>
+                    </a>
+                </div>
+                <div class="tab-title vision-tab bg-green-20">
+                    <a href="javascript:void()" class=""
+                    [ngClass]="{'active': this.isVisionActive() }"
+                    (click)="this.tabToView('vision')"
+                    >
+                        <h4 class="text-[16px] font-semibold">02. Visão</h4>
+                    </a>
+                </div>
+                <div class="tab-title values-tab bg-orange-20">
+                    <a href="javascript:void()" class=""
+                    [ngClass]="{'active': this.isValuesActive() }"
+                    (click)="this.tabToView('values')"
+                    >
+                        <h4 class="text-[16px] font-semibold">03. Valores</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="tabs-content">
+                <div class="mission-tab-description tb-desc lg:w-[90%] xl:w-[462px]" *ngIf="this.isMissionActive() ">
+                    <div class="mission-tab-description h-[96px] bg-green-40 overflow-hidden"
+                    [ngClass]="{'extended': (this.isMissionExtended() )}"
+                    >
+                        <p class="">
+                            Proporcionar serviços competitivos e de alta qualidade ao mercado, tendo como base o conhecimento científico como gerador de práticas de inovação.
+                            <br>Procurar a satisfação dos nossos clientes com a prestação de serviços especializados, agregando para efeito capacidade técnica sofisticada e com firmeza desenvolvendo projectos com soluções técnicas integradas e de elevado valor acrescentado.
+                        </p>
+                    </div>
+                    <div class="button-see-more my-7">
+                        <a href="javascript:void(0)" (click)="this.toggleExtend('mission')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                            {{ this.missionLabel }}
+                            <svg [ngClass]="{'rotate': (this.isMissionExtended() )}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="#C8C8C8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="vision-tab-description tb-desc lg:w-[90%] xl:w-[462px]" *ngIf="this.isVisionActive() ">
+                    <div class="vision-tab-description h-[96px] bg-green-40 overflow-hidden"
+                    [ngClass]="{'extended': (this.isVisionExtended() )}"
+                    >
+                        <p class="">
+                            A nossa visão é baseada no dia no dia, como empresa de elevada referência de mercado e motivada pelas melhores práticas na experiência sem limites da vivência da conquista de mercado, dentro do nosso core business, bem como desenvolver a capacidade de integrar recursos a nível global e traçando o caminho da internacionalização, que se quer, à consolidar num especial interesse nos países da região austral de África e na Lusofonia.
+                        </p>
+                    </div>
+                    <div class="button-see-more my-7">
+                        <a href="javascript:void(0)" (click)="this.toggleExtend('vision')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                            {{ this.visionLabel }}
+                            <svg [ngClass]="{'rotate': (this.isVisionExtended() )}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="#C8C8C8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="values-tab-description tb-desc lg:w-[90%] xl:w-[462px]" *ngIf="this.isValuesActive() ">
+                    <div class="values-tab-description h-[96px] bg-green-40 overflow-hidden"
+                    [ngClass]="{'extended': (this.isValuesExtended() )}"
+                    >
+                        <p class="">
+                            (Valores, têm que ser alterados) A nossa visão é baseada no dia no dia, como empresa de elevada referência de mercado e motivada pelas melhores práticas na experiência sem limites da vivência da conquista de mercado, dentro do nosso core business, bem como desenvolver a capacidade de integrar recursos a nível global e traçando o caminho da internacionalização, que se quer, à consolidar num especial interesse nos países da região austral de África e na Lusofonia.
+                        </p>
+                    </div>
+                    <div class="button-see-more my-7">
+                        <a href="javascript:void(0)" (click)="this.toggleExtend('values')" class="text-[#A1A1A1] flex gap-1 justify-start items-center">
+                            {{ this.valuesLabel }}
+                            <svg [ngClass]="{'rotate': (this.isValuesExtended() )}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="#C8C8C8" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

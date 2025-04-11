@@ -1,0 +1,66 @@
+<div class="section-content bg-(color:--primary) py-10 xl:py-28">
+    <div class="limited-container">
+        <div class="services-section relative flex flex-col md:flex-row gap-y-10 xl:justify-between xl:items-stretch">
+            <div class="main-title relative w-full">
+                <h1 class="text-5xl text-(color:--secondary) !font-['SpaceGrotesk'] md:sticky md:top-[120px] text-center font-bold md:text-left">
+                    Serviços
+                </h1>
+            </div>
+            <div class="services-content w-full xl:w-[70%]">
+                <div class="article-title">
+                    <h1 class="text-3xl md:text-5xl !font-['SpaceGrotesk'] max-w-[510px] font-bold text-white leading-[100%]">
+                        Desenhamos progresso, economia e desenvolvimento.
+                    </h1>
+                </div>
+                
+                <div class="services-container mt-10 flex flex-col gap-y-2">
+                    @for (service of services; track $index) {
+                        <div class="service-box overflow-hidden" data-aos="fade-up"
+                        [ngClass]="{'active opened': this.activeIndex() == $index}"
+                        >
+                            <a href="javascript:void(0)" class="" (click)="this.opentab($index)">
+                                <div class="main-service-title z-[3] py-5 border-b-[1px] border-[#C8C8C8] flex justify-between items-center">
+                                    <div class="title-description">
+                                        <p class="text-[20px] text-white">{{ service.name }}</p>
+                                    </div>
+                                    <div class="title-icon">
+                                        <svg *ngIf="!(this.activeIndex() == $index)" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" fill="white"/>
+                                            <path d="M12 5V19M5 12H19" stroke="#003569" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <svg *ngIf="this.activeIndex() == $index" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" fill="white"/>
+                                            <path d="M5 12H19" stroke="#00376D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="tab-service-description overflow-hidden"
+                            [ngClass]="{'show-description': this.activeIndex() == $index}"
+                            >
+                                <div class="description-text mb-5">
+                                    <p class="text-white text-lg leading-[150%]">
+                                        {{ service.description }}
+                                    </p>
+                                </div>
+                                <div class="service-image relative rounded-[4px] h-[342px] max-h-[320px] overflow-hidden">
+                                    <div class="skeleton-img-bg"></div>
+                                    <img src="{{ service.imagePath }}" fill class="w-full h-full object-center object-cover" alt="">
+                                    <div
+                                    class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center xl:justify-end">
+                                        <a [routerLink]="['/services/details/' + service.slug]" class="text-(color:--secondary) bg-(color:--primary) flex gap-3 justify-center items-center bg-primary p-4 rounded">
+                                            Ver mais detalhes
+                                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 7.5C6.76774 7.5 7.23226 7.5 13 7.5M13 7.5L7.46154 1.5M13 7.5L7.46154 13.5" stroke="#DCF906" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
