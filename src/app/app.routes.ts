@@ -36,7 +36,7 @@ export const routes: Routes = [
             },
             {
                 path: 'details/:project',
-                loadComponent: () => import('./pages/projects/details/details.component').then(component => component.DetailsComponent),
+                loadComponent: () => import('./pages/projects/details/components/container/details.component').then(component => component.DetailsComponent),
                 title: 'Detalhes de projecto'
             }
         ]
@@ -51,7 +51,7 @@ export const routes: Routes = [
             },
             {
                 path: 'article/:new',
-                loadComponent: () => import('./pages/news/details/details.component').then(component => component.DetailsComponent),
+                loadComponent: () => import('./pages/news/details/components/container/details.component').then(component => component.DetailsComponent),
                 title: 'Leitura de notícia'
             }
         ]

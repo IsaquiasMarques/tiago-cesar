@@ -3,12 +3,12 @@ import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-details',
   imports: [ RouterLink, NgClass ],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  templateUrl: './details.component.html',
+  styleUrl: './details.component.css'
 })
-export class ProjectsComponent {
+export class DetailsComponent {
 
   active = signal<number>(0);
 
@@ -45,12 +45,12 @@ export class ProjectsComponent {
     },
   ];
 
-  formatIndex(index: number): string {
-    return index.toString().padStart(3, '0');
-  }
-
   open(index:number){
     this.active.set(index);
+  }
+
+  formatIndex(index: number): string {
+    return index.toString().padStart(3, '0');
   }
 
 }

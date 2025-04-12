@@ -1,7 +1,7 @@
-<div [attr.data-aos]="this.animate() ? 'fade-up' : ''" class="post-box relative w-[350px] desktop:w-[370px] h-full">
+<div [attr.data-aos]="this.animate() ? 'fade-up' : ''" class="post-box relative w-[350px] xl:w-[408px] h-full">
     <div class="img w-full h-[363px] overflow-hidden rounded-[4px]">
-        <a [routerLink]="['/post-details/' + this.slug()]">
-            <img src="{{ this.imagePath.fullImagePath }}" class="w-full h-full object-cover object-center" alt="">
+        <a [routerLink]="['/news/article/' + this.slug()]">
+            <img [src]="this.imagePath()" class="w-full h-full object-cover object-center" alt="">
         </a>
     </div>
     <div class="middle-details my-5 flex justify-between items-center">
@@ -18,20 +18,22 @@
     </div>
     <div class="description">
         <div class="main-title">
-            <a [routerLink]="[ '/news/details/' + this.slug() ]">
-                <h1 class="text-[24px] font-semibold leading-[30px] mb-0" [innerHTML]="this.title()">
+            <a [routerLink]="[ '/news/article/' + this.slug() ]">
+                <h1 class="text-2xl font-bold mb-0" [innerHTML]="this.title()">
                 </h1>
             </a>
         </div>
         <div class="main-description my-5">
-            <p class="text-[#808080] text-[16px]" [innerHTML]="this.excerpt()">
+            <p class="text-[#808080] text-base line-clamp-2" [innerHTML]="this.excerpt()">
             </p>
         </div>
     </div>
     <div class="read-more">
-        <a [routerLink]="['/news/details/' + this.slug()]" class="w-full bg-primary py-4 px-2 rounded text-[14px] text-white flex gap-3 justify-center items-center">
+        <a [routerLink]="['/news/article/' + this.slug()]" class="w-full bg-(color:--primary) py-4 px-2 rounded text-[14px] text-(color:--secondary) flex gap-3 justify-center items-center">
             Continuar leitura
-            <img src="assets/svg/icons/know-more/right-arrow.svg" alt="">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 7.5C7.26774 7.5 7.73226 7.5 13.5 7.5M13.5 7.5L7.96154 1.5M13.5 7.5L7.96154 13.5" stroke="#DCF906" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </a>
     </div>
 </div>

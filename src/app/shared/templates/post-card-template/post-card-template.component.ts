@@ -15,10 +15,5 @@ export class PostCardTemplateComponent {
   posted_at = input.required();
   timeToRead = input.required();
   excerpt = input.required();
-  
-  imagePath: { thumbnailImagePath: string, mediumImagePath: string, fullImagePath: string } = {
-    thumbnailImagePath: '',
-    mediumImagePath: '',
-    fullImagePath: ''
-  }
+  imagePath = input.required();
 }

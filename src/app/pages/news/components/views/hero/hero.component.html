@@ -1,52 +1,35 @@
-<div class="hero-section flex flex-col justify-center items-center">
-    <div class="flex items-center justify-center">
-        <h4 class="text-[16px] text-primary font-semibold mb-2">Notícias</h4>
-    </div>
-    <div class="title xl:w-[70%] w-full flex items-center justify-center text-center">
-        <h1 class="hidden xl:flex text-[40px] text-[#121212] font-bold">Acompanhe todas as notícias sobre o mercado de construção e arquitectura do mercado angolano</h1>
-        <h1 class="xl:hidden flex text-[32px] text-[#121212] font-bold">Novidade de construção e arquitectura no mercado angolano.</h1>
-    </div>
-    <div class="component-slider absolute bottom-[-5%] mb-2 xl:mb-0 xl:relative overflow-x-auto xl:overflow-x-visible w-full h-[100px] xl:h-fit xl:w-[85%] flex xl:flex-wrap items-center justify-start xl:justify-center gap-2 gap-y-4 mt-10">
-        
-        <div *ngFor="let category of this.categories; let i = index" class="category"
-        [ngClass]="{ 'ml-[0%] xl:ml-0 tablet:ml-0': i == 0 }"
-        >
-            <a
-            *ngIf="category.hasPosts"
-            [ngClass]="
-                {
-                    'bg-primary text-white': category.isActive,
-                    'bg-primary/[.05]': !category.isActive
-                }"
-            class="xl:text-[16px] block whitespace-nowrap transition-colors text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full"
-            (click)="changeSelectedCategory(category.slug)">
-                {{ category.name }}
-            </a>
+<div class="hero-section">
+    <div class="limited-container flex flex-col gap-10 justify-center items-center">
+        <div class="flex items-center justify-center">
+            <h4 class="text-base text-primary font-semibold !font-['SpaceGrotesk'] text-(color:--primary)">Notícias</h4>
+        </div>
+        <div class="title w-full flex items-center justify-center text-center max-w-[924px]">
+            <h1 class="flex text-3xl xl:text-[52px] xl:leading-[120%] text-(color:--primary) font-bold">Acompanhe todas as notícias sobre o mercado de construção e arquitectura do mercado angolano</h1>
+        </div>
+        <div class="categories-scroller w-full max-w-screen overflow-x-auto xl:h-fit xl:w-[85%] flex xl:flex-wrap items-center justify-start xl:justify-center gap-2 gap-y-4">
+            @for (category of categories(); track $index) {
+                <div class="category">
+                    <a
+                    [ngClass]="
+                        {
+                            'bg-(color:--primary) text-white': active() === $index,
+                            'bg-(color:--primary)/[.05]': !( active() === $index)
+                        }"
+                    class="xl:text-base block whitespace-nowrap transition-colors text-sm text-(color:--primary) px-4 py-2.5 rounded-full"
+                    (click)="changeCategory($index)"
+                    >
+                        {{ category.name }}
+                    </a>
+                </div>
+            }
         </div>
 
-    </div>
-    <!-- <div class="component-slider w-full relative bg-red-900 overflow-hidden mt-10">
-        <div class="categories w-fit bg-red-00 flex gap-5 justify-start xl:justify-center items-center">
-            <div
-            class="category bg-green-300 w-fit"
-            *ngFor="let category of this.categories">
-                <a
-                *ngIf="category.hasPosts"
-                [ngClass]="
-                    {
-                        'bg-primary text-white': category.isActive,
-                        'bg-primary/[.05]': !category.isActive
-                    }"
-                class="xl:text-[16px] w-fit block transition-colors text-[14px] text-primary px-4 py-2.5 bg-primary/[.05] rounded-full"
-                (click)="changeSelectedCategory(category.slug)">
-                    {{ category.name }}
-                </a>
-            </div>
+        <div class="searchbar flex items-center justify-center px-3 gap-x-2 w-full xl:w-[40%]">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 19L15.5001 15.5M18 9.5C18 14.1944 14.1944 18 9.5 18C4.80558 18 1 14.1944 1 9.5C1 4.80558 4.80558 1 9.5 1C14.1944 1 18 4.80558 18 9.5Z" stroke="#00376D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <input [(ngModel)]="searchTerm" type="search" placeholder="Pesquisa por qualquer assunto sobre construção e arquitectura" class="outline-none placeholder:text-[#A4A4A4] placeholder:text-[12px] xl:placeholder:text-[14px] text-[12px] xl:text-[14px]">
         </div>
-    </div> -->
-    <div class="hidden xl:flex searchbar mt-20 items-center justify-center gap-x-2 w-[80%] xl:w-[40%]">
-        <img src="assets/svg/icons/posts/hero/search.svg" alt="">
-        <input [(ngModel)]="searchTerm" (ngModelChange)="onTermChange()" type="search" placeholder="Pesquisa por qualquer assunto sobre construção e arquitectura" class="outline-none placeholder:text-[#A4A4A4] placeholder:text-[12px] xl:placeholder:text-[14px] text-[12px] xl:text-[14px]">
     </div>
     
 </div>
