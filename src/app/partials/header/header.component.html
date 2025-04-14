@@ -43,7 +43,7 @@
                 <path d="M28.4161 6.28189V12.1512H19.611V23.9668H13.7417V6.28189H28.4161Z" fill="#DCF906"/>
             </svg>
         </div>
-        <nav class="hidden xl:block">
+        <nav class="hidden xl-1230:block">
             <ul class="flex gap-8 justify-start items-center">
                 <li>
                     <a [routerLink]="['/']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-base text-(color:--primary)">
@@ -78,20 +78,95 @@
             </ul>
         </nav>
     </div>
-    <div class="menu-invoker h-12 xl:hidden">
-        <button class="">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="48" height="48" fill="white"/>
-                <path d="M35 24.3333H13M35 17H13M35 31.6667H13" stroke="#121212" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+    <div class="menu-invoker h-8 xl-1230:hidden">
+        <button class="" (click)="openDropdown()">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_245_121)">
+                <path d="M5 16H27" stroke="#00376D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 8H27" stroke="#00376D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5 24H27" stroke="#00376D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_245_121">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
             </svg>
         </button>
     </div>
-    <div class="call-to-action hidden xl:block">
+    <div class="call-to-action hidden 2xl:block">
         <button class="bg-(color:--primary) !font-['SpaceGrotesk'] font-bold text-(color:--secondary) py-4 px-6 cursor-pointer flex gap-3 leading-[150%] justify-between items-center">
             Conheça nossos serviços
             <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.70697 16.9496L15.414 11.2426L9.70697 5.53564L8.29297 6.94964L12.586 11.2426L8.29297 15.5356L9.70697 16.9496Z" fill="#DCF906"/>
             </svg>
         </button>
+    </div>
+</div>
+<div class="menu-dropdown fixed top-0 duration-[.6s] left-0 h-0 w-full overflow-hidden bg-(color:--primary)"
+[ngClass]="{
+    'h-screen' : this.dropdownExtended()
+}"
+>
+    <div class="dropdown-header limited-container py-4 md:py-6 flex justify-between items-center border-b border-dashed border-[#C4C4C4]">
+        <div class="logo">
+            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.6793 0.160339H0V33.8397H33.6793V0.160339Z" fill="#00376D"/>
+                <path d="M28.4165 29.6832H19.6113V23.8139H22.2837L28.4165 29.6832Z" fill="#DCF906"/>
+                <path d="M12.6137 6.12903V11.9983H9.94138L3.80859 6.12903H12.6137Z" fill="#DCF906"/>
+                <path d="M28.4166 6.12903V11.9983H19.6115V23.8139H13.7422V6.12903H28.4166Z" fill="#DCF906"/>
+            </svg>
+        </div>
+        <div class="close-dropdown">
+            <button class="" (click)="closeDropdown()">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_245_152)">
+                    <path d="M25 7L7 25" stroke="#DCF906" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M25 25L7 7" stroke="#DCF906" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_245_152">
+                    <rect width="32" height="32" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="dropdown-body limited-container py-7">
+        <nav class="">
+            <ul class="flex flex-col gap-8 justify-start items-start">
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Página Inicial
+                    </a>
+                </li>
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/about-us']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Sobre nós
+                    </a>
+                </li>
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/services']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Serviços
+                    </a>
+                </li>
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/projects']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Projectos
+                    </a>
+                </li>
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/news']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Notícias
+                    </a>
+                </li>
+                <li>
+                    <a (click)="closeDropdown()" [routerLink]="['/contact-us']" [routerLinkActive]="''" class="!font-['SpaceGrotesk'] font-bold text-3xl text-(color:--secondary)">
+                        Contactos
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
