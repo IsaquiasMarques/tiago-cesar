@@ -1,12 +1,12 @@
 <div class="section-content bg-(color:--primary) py-10 xl:py-28">
     <div class="limited-container">
-        <div class="services-section relative flex flex-col md:flex-row gap-y-10 xl:justify-between xl:items-stretch">
+        <div class="services-section relative flex flex-col md:flex-row gap-y-10 xl:justify-between xl:items-start">
             <div class="main-title relative w-full">
                 <h1 class="text-5xl text-(color:--secondary) !font-['SpaceGrotesk'] md:sticky md:top-[120px] text-center font-bold md:text-left">
                     Serviços
                 </h1>
             </div>
-            <div class="services-content w-full xl:w-[70%]">
+            <div data-aos="fade-left" class="services-content w-full xl:w-[70%]">
                 <div class="article-title">
                     <h1 class="text-3xl md:text-5xl !font-['SpaceGrotesk'] max-w-[510px] font-bold text-white leading-[100%]">
                         Desenhamos progresso, economia e desenvolvimento.
@@ -45,8 +45,8 @@
                                 </div>
                                 <div class="service-image relative rounded-[4px] h-[342px] max-h-[320px] overflow-hidden">
                                     <div class="skeleton-img-bg"></div>
-                                    <img src="{{ service.imagePath }}" fill class="w-full h-full object-center object-cover" alt="">
-                                    <div
+                                    <img src="{{ service.imagePath }}" fill class="w-full h-full object-top object-cover" alt="">
+                                    <!-- <div
                                     class="button absolute top-0 left-0 p-10 see-more-service z-[2] w-full h-full flex items-end justify-center xl:justify-end">
                                         <a [routerLink]="['/services/details/' + service.slug]" class="text-(color:--secondary) bg-(color:--primary) flex gap-3 justify-center items-center bg-primary p-4 rounded">
                                             Ver mais detalhes
@@ -54,7 +54,7 @@
                                                 <path d="M1 7.5C6.76774 7.5 7.23226 7.5 13 7.5M13 7.5L7.46154 1.5M13 7.5L7.46154 13.5" stroke="#DCF906" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

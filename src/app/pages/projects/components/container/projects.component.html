@@ -1,22 +1,22 @@
 <div class="section-container py-10 xl:py-28">
     <div class="limited-container flex flex-col gap-y-10 xl:gap-y-20">
         <div class="section-header flex flex-col gap-6 xl-1230:flex-row justify-between items-start">
-            <div class="title max-w-[671px]">
+            <div data-aos="fade-right" class="title max-w-[671px]">
                 <h1 class=" !font-['SpaceGrotesk'] text-(color:--primary) font-bold text-4xl text-center xl-1230:text-left xl-1230:text-5xl leading-[120%]">
                     Garantimos qualidade e satisfação para todos nossos clientes
                 </h1>
             </div>
-            <div class="description max-w-[511px]">
+            <div data-aos="fade-left" class="description max-w-[511px]">
                 <p class=" !font-['SpaceGrotesk'] text-center xl-1230:text-left text-(color:--primary)">
                     Atuamos como subempreiteiros em projetos de hidráulica, alvenaria, armaduras, cofragem, pinturas e eletricidade, garantindo qualidade e eficiência na execução.
                 </p>
             </div>
         </div>
 
-        <div class="projects flex gap-4 flex-col xl-1230:flex-row justify-start items-stretch">
+        <div data-aos="fade-up" class="projects flex gap-4 flex-col xl-1230:flex-row justify-start items-stretch">
 
             @for (project of projects; track $index) {
-                <div data-aos="fade-up" class="box-card duration-[.6s] relative w-full xl-1230:w-[60px] h-[440px] xl:h-[720px] overflow-hidden flex items-center"
+                <div class="box-card duration-[.6s] relative w-full xl-1230:w-[60px] h-[440px] xl:h-[720px] overflow-hidden flex items-center"
                 [ngClass]="{
                     'xl-1230:w-[1008px]' : $index == active(),
                 }"

@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './post-card-template.component.css'
 })
 export class PostCardTemplateComponent {
-  animate = input(false);
+  animate = input(true);
 
   title = input.required();
   slug = input.required();

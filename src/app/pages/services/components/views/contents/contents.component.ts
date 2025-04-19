@@ -1,10 +1,10 @@
 import { isPlatformBrowser, NgClass, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Inject, inject, PLATFORM_ID, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contents',
-  imports: [ NgClass, NgIf, RouterLink ],
+  imports: [ NgClass, NgIf ],
   templateUrl: './contents.component.html',
   styleUrl: './contents.component.css'
 })
