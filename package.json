@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:tiago-cesar": "node dist/tiago-cesar/server/server.mjs"
+    "serve:ssr:tiago-cesar": "node dist/tiago-cesar/server/server.mjs",
+    "build:prod:loader": "ng build --configuration production && cp loader.cjs dist/tiago-cesar/server"
   },
   "private": true,
   "dependencies": {
