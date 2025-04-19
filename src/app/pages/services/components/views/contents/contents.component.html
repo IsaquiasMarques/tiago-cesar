@@ -15,7 +15,7 @@
                 
                 <div class="services-container mt-10 flex flex-col gap-y-2">
                     @for (service of services; track $index) {
-                        <div class="service-box overflow-hidden" data-aos="fade-up"
+                        <div class="service-box overflow-hidden"
                         [ngClass]="{'active opened': this.activeIndex() == $index}"
                         >
                             <a href="javascript:void(0)" class="" (click)="this.opentab($index)">
