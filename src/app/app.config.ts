@@ -3,6 +3,7 @@ import { InMemoryScrollingFeature, InMemoryScrollingOptions, provideRouter, with
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 const scrollConfig: InMemoryScrollingOptions = {
   scrollPositionRestoration: 'enabled',
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideExperimentalZonelessChangeDetection(),
     // provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, inMemoryScrollingFeatures),
+    provideHttpClient(withFetch()),
     provideClientHydration(withEventReplay())
   ]
 };

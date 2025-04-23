@@ -51,6 +51,13 @@
     border: 1.4px solid var(--primary-color);
 }
 
+.section-form form div.form-row .input input.is-invalid,
+.section-form form div.form-row .input select.is-invalid,
+.section-form form div.form-row textarea.is-invalid{
+    /* border: 1px solid var(--primary-color); */
+    border: 1px solid #f33;
+}
+
 /* .check input:checked + label:after {
     content: '';
     display: block;
